@@ -509,9 +509,55 @@ p{
     }
 
 
+
+    
+
 //tienda
 
-.tienda-provisorio{
+
+.tienda-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    height: 1000px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #fff;
+    position: relative;
+    margin: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+
+    &:hover .tienda-body{
+        right: 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .tienda-imagen{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .tienda-body{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: -100%;
+        position: absolute;
+        background: #1c353b54;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        color: #fff;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: 1.8s;
+    }
+
+
 }
+

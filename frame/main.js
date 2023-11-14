@@ -5,7 +5,7 @@ class producto{
         this.id = id;
         this.nombre = nombre;
         this.imagen = imagen;
-        this.descripcion = descripcion
+        this.descripcion = descripcion;
         this.precio = precio
     }
 
@@ -50,15 +50,20 @@ productos.forEach((item) => {
     let productDiv = document.createElement("div");
 
     productDiv.innerHTML = `
-    <h4>Nombre: ${item.nombre}</h4>
-    <img src="${item.imagen}" alt="${item.nombre}">
-    <p>${item.descripcion}</p>
-    <b>$${item.precio}</b>
+    <div class="tienda-container">
     
-    <button id="boton${item.id}">Agregar</button>
+        <img src="${item.imagen}" alt="${item.nombre}">
+    
+        <div class="tienda-body">
+            <h4>Nombre: ${item.nombre}</h4>    
+            <p>${item.descripcion}</p>
+            <b>$${item.precio}</b>
+            <button id="boton${item.id}">Agregar</button>
+        </div>
+    </div>    
+    
     <hr />
-
-    `;
+`;
 
     document.getElementById("tienda__container").appendChild(productDiv);
 
