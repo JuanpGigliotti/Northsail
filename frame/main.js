@@ -48,10 +48,11 @@ let div = document.getElementById("tienda__container");
 
 productos.forEach((item) => {
     let productDiv = document.createElement("div");
+    productDiv.classList.add("tienda-container");
+
 
     productDiv.innerHTML = `
-    <div class="tienda-container">
-    
+
         <img src="${item.imagen}" alt="${item.nombre}">
     
         <div class="tienda-body">
@@ -60,7 +61,7 @@ productos.forEach((item) => {
             <b>$${item.precio}</b>
             <button id="boton${item.id}">Agregar</button>
         </div>
-    </div>    
+       
     
     <hr />
 `;
