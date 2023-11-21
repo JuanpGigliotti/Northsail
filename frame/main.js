@@ -56,10 +56,10 @@ productos.forEach((item) => {
         <img src="${item.imagen}" alt="${item.nombre}">
     
         <div class="tienda-body">
-            <h4>Nombre: ${item.nombre}</h4>    
+            <h4>${item.nombre}</h4>    
             <p>${item.descripcion}</p>
             <b>$${item.precio}</b>
-            <button id="boton${item.id}">Agregar</button>
+            <button id="boton${item.id}"><span>Agregar</span></button>
         </div>
        
     

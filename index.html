@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/regular.min.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="./frame/style.css">
 </head>
@@ -46,7 +47,7 @@
     
             <nav class="navbar_index">
                 <a href="#main__titulo" style="--i:0;">Home</a>
-                <a href="#main__tienda" style="--i:1;">tienda</a>
+                <a href="#main__tienda" style="--i:1;">Market</a>
                 <a href="#main__sobrenosotros" style="--i:1;">About Us</a>
                 <a href="#main__galeria" style="--i:2;">Gallery</a>
                 <a href="#main__contacto" style="--i:3;">Contact</a>
@@ -55,17 +56,28 @@
         </header>
     </section>
 
+
+
+
+
     <section id="main__titulo">
-        <div class="shopnow">
-            <a href="#main__tienda" class="link"><H1 class="shopnow__titulo">Shop Now</H1></a>
+        
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1000" class="shopnow">
+            <H1 class="shopnow__titulo">About us</H1>
         </div>
     </section>
 
+
+
     <section id="main__sobrenosotros">
+        
         <div class="sobrenosotros">
-            <img class="nosotros_imagen" src="./imagenes/foto-ceo.jpg">
+            
             <h2 class="nosotros_titulo">"You will make history looking into the future"</h2>
         </div>
+
 
         <div class="sobrenosotros-historia">
             <p class="historia__texto">In 1957, North Sails founder Lowell North set out to make the fastest, highest-quality racing sails that had ever existed. He achieved it, and changed the world of sailing forever. Today, whether for the America's Cup winner, the Vendée Globe champion, an Olympic superstar or an amateur sailor, every sail we make is born from the winning spirit and absolute dedication to the sport we love.
@@ -75,69 +87,67 @@
                 <br><br><br>
                 “You will make history by looking to the future.”— Lowell North</p>
         </div>
-        <div class="grid-expert">
-            <div class="div1">
-                <img src="./imagenes/viejo-navegando.webp">
-            </div>
-            <div class="div2"> 
-                <h3>DEFINING THE NAVIGATION FROM 1957</h3>
-                <p>You can imagine the future, or you can create it. Lowell North went further—it took the helm.
+
+        
+
+
+
+            <div class="historia__container">
+                <img class="historia__imagen" src="./imagenes/viejo-navegando.webp">
+                <div class="historia__textcontainer"> 
+                    <h3>DEFINING THE NAVIGATION FROM 1957</h3>
+                    <p>You can imagine the future, or you can create it. Lowell North went further—it took the helm.
 
                     When he founded North Sails, his philosophy was very simple: Get the best and commit to making the best product. Act clearly, creatively, methodically and with a competitive spirit. Go beyond what you ever imagined.
                     
                     For more than six decades, teams powered by North Sails have achieved remarkable results. Along with sailing's most prestigious podiums, our wins – offshore, inshore and one design – highlight hundreds of projects motivated by collaboration between our designers, manufacturers and sailing experts from around the world. We all benefit and learn, as do the people who choose North.</p>
+                </div>
             </div>
-            <div class="div3">
-                <h3>INSPIRED IN HE OCEAN. LEADING TO THROUGH OF THE DESIGN.</h3>
-                <p>Our sails create champions and our garments are made from the same fabric. The legacy of Lowell North lives on at North Sails Apparel. Since 1989, his clothes have been designed and made so that nothing gets in the way of what really matters—facing the sea, heading for the hills, or simply navigating modern life.
-
+            
+            <div class="historia__container">
+                <div class="historia__textcontainer">
+                    <h3>INSPIRED IN HE OCEAN. LEADING TO THROUGH OF THE DESIGN.</h3>
+                    <p>Our sails create champions and our garments are made from the same fabric. The legacy of Lowell North lives on at North Sails Apparel. Since 1989, his clothes have been designed and made so that nothing gets in the way of what really matters—facing the sea, heading for the hills, or simply navigating modern life.
                     For Performance garments, the single goal is to create the best bad-weather gear on the planet, while Lifestyle collections bring the spirit of the ocean to the coast and the city, combining classic Italian design with our valuable sailing pedigree and environmentally friendly materials.</p>
+                </div>
+                <img class="historia__imagen" src="./imagenes/viejo-gorrita.jpg">
             </div>
-            <div class="div4">
-                <img src="./imagenes/viejo-gorrita.jpg">
+                
+            <div class="todo">
+                <img class="todo_imagen" src="./imagenes/barco-regata.webp">    
             </div>
-            <div class="div5">
-                <img src="./imagenes/barco-regata.webp">    
-            </div>
-            <div class="div6"> 
-                <img src="./imagenes/agua.webp">
-            </div>
-            <div class="div7">
-                <img src="./imagenes/coral.webp">    
-            </div>
-            <div class="div8"> 
-                <h3>BECOME OCEAN POSITIVE</h3>
-                <p>We've come a long way to become the world's first Ocean Positive brand—and we're headed in the right direction. Our commitment is focused on renewing and regenerating the ocean, as well as conserving it for future generations.
 
+            <div class="historia__container"> 
+                <img class="historia__imagen" src="./imagenes/agua.webp">
+                <img class="historia__imagen" src="./imagenes/coral.webp">    
+                <div class="historia__textcontainer"> 
+                    <h3>BECOME OCEAN POSITIVE</h3>
+                    <p>We've come a long way to become the world's first Ocean Positive brand—and we're headed in the right direction. Our commitment is focused on renewing and regenerating the ocean, as well as conserving it for future generations.
                     We strive to transform every aspect of North Sails. Before 2030, we want to use at least 80% renewable electricity. Additionally, we use recycled and recyclable materials where possible; We reduce waste in candle creation and manufacturing, and partner with ocean conservation programs around the world. Together we can chart and steer the course toward a cleaner, healthier ocean.</p>
+                </div>
             </div>
-            <div class="div9">
-                <h3>LOWELL NORTH</h3>   
-                <p>Lowell North (1929-2019) was an American sailor and sailmaker considered by many to be one of the most influential figures in the world of yachting. He was born in Springfield, Missouri, and grew up in California, where he really began his passion for sailing.
 
-                    After launching a successful career as an aerospace engineer, his restless mind led him to strike out on his own, so he left his job as an aerospace designer and founded North Sails in 1957. Many of the world's top teams and sailors used North Sails
-                    
+            <div class="historia__container">
+                <div class="historia__textcontainer">
+                    <h3>LOWELL NORTH</h3>   
+                    <p>Lowell North (1929-2019) was an American sailor and sailmaker considered by many to be one of the most influential figures in the world of yachting. He was born in Springfield, Missouri, and grew up in California, where he really began his passion for sailing.
+                    After launching a successful career as an aerospace engineer, his restless mind led him to strike out on his own, so he left his job as an aerospace designer and founded North Sails in 1957. Many of the world's top teams and sailors used North Sails                  
                     . North, and he himself was quite successful competing in ocean racing. Today, North Sails is the world's largest—and leading—sail manufacturer, renowned for its innovative sail designs and cutting-edge technology.
-                    
                     North was an accomplished sailor: he won the Star World championship five times and competed in the Olympics. He was inducted into the America's Cup Hall of Fame in 1993, as well as the National Sailing Hall of Fame in 2011.</p> 
+                </div>
+                <img class="historia__imagen" src="./imagenes/lawell.webp">
             </div>
-            <div class="div10">
-                <img src="./imagenes/lawell.webp">    
-            </div>
-            <div class="div11">
-                <img src="./imagenes/barco-negro.webp">    
-            </div>
-            <div class="div12"> 
-                <img src="./imagenes/barco-blanco.webp">
-            </div>
-            <div class="div13"> 
-                <h3>OUR WORLD</h3>
-                <p>From a humble room on San Diego's B Street Pier, Lowell North designed and built the mainsail for the Star vessel that started it all.
-
-                    Six decades later, North Sails has grown to become the world's leading sailmaker, with seven of its own manufacturing plants in six countries, 2,000 people driving the international business and tens of thousands of sails hoisted in seas and ports around the world. every year.
-                    
+                   
+            
+            <div class="historia__container">
+                <img class="historia__imagen" src="./imagenes/barco-negro.webp">    
+                <img class="historia__imagen" src="./imagenes/barco-blanco.webp">
+                <div class="historia__textcontainer"> 
+                    <h3>OUR WORLD</h3>
+                    <p>From a humble room on San Diego's B Street Pier, Lowell North designed and built the mainsail for the Star vessel that started it all.
+                    Six decades later, North Sails has grown to become the world's leading sailmaker, with seven of its own manufacturing plants in six countries, 2,000 people driving the international business and tens of thousands of sails hoisted in seas and ports around the world. every year
                     The family that includes North Sails, North Sails Apparel and North Sails Actionsports remains anchored by the core values ​​that made Lowell North successful in the first place: in-house material analysis and development, performance-driven design, quality craftsmanship and customer service. .</p>
-            </div>
+                </div>
             </div>
        
 
@@ -146,6 +156,12 @@
     </section>
 
     <section id="main__tienda">
+       
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1000" class="title_glow">
+            <h4>Market</h4>
+        </div>
 
         <div id="tienda__container">
 
@@ -155,7 +171,12 @@
 
 
     <section id="main__galeria">
-        
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1000" class="title_glow">
+            <h4>Gallery</h4>
+        </div>
+
         <div class="galeria-img">          
             <img src="./imagenes/grid1.jpg">
             <img src="./imagenes/grid2.jpg">
@@ -189,12 +210,14 @@
     <div class="redes-container">
         <img class="redes-item" src="./imagenes/barco-blanco.webp">
         <img class="redes-item" src="./imagenes/ola.jpg">
-        <div class="redes-item">
+        <div class="redes-item seguinos">
             <h5>SÍGANOS</h5>
-            <a href="https://www.facebook.com/NmasUy/?locale=es_LA"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/north_sails/?hl=es"><i class="fa-brands fa-instagram fa-2xl" style="color: #161f3b;"></i></a>
-            <a href="https://twitter.com/northsails?lang=es"><i class="fa-brands fa-x-twitter fa-2xl" style="color: #161f3b;"></i></a>
-            <a href="https://www.youtube.com/@North_Sails"><i class="fa-brands fa-youtube fa-2xl" style="color: #161f3b;"></i></a>
+            <div class="links-container">
+                <a href="https://www.facebook.com/NmasUy/?locale=es_LA"><img src="./imagenes/facebook_2504903.png"></a>
+                <a href="https://www.instagram.com/north_sails/?hl=es"><img src="./imagenes/instagram_2111463.png"></a>
+                <a href="https://twitter.com/northsails?lang=es"><img src="./imagenes/twitter_5968830.png"></a>
+                <a href="https://www.youtube.com/@North_Sails"><img src="./imagenes/youtube_2504965.png"></a>
+            </div>
         </div>
         <img class="redes-item" src="./imagenes/wachines.webp">
         <img class="redes-item" src="./imagenes/viejo-azul.webp">
@@ -239,6 +262,21 @@
 
     </section>
 
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+<script> const rellax = new Rellax('.rellax'); </script>
+
 <script src="./frame/main.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
