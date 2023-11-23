@@ -42,8 +42,10 @@ const agregar = (id) =>{
     //aca iria la herramienta que mostro el profe pero no tengo ganas de buscar
 }
 
+
+
 //contenedor afuera burraso
-let div = document.getElementById("tienda__container");
+let tiendacontainer = document.getElementById("tienda__container");
 
 
 productos.forEach((item) => {
