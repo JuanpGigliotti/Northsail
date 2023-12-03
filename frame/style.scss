@@ -8,11 +8,15 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
-h1, h2, h3, h4, h5,a {
+html {
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5,a, label {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-p{
+p, span , input, div, button{
     font-family: 'Montserrat', sans-serif;  
 }
 
@@ -249,13 +253,15 @@ p{
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 80px;
+    justify-content: flex-end;
+    padding: 120px;
+    
     
     
     .historia__texto{
         font-size: 2rem;
-        align-self: center;
+        align-self: flex-end;
+        padding: 80px;
     }
 }
 
@@ -266,13 +272,15 @@ p{
     display: flex;
     background-color: #fff;
     width: 100%;
+    padding: 40px;
 
 
     .historia__imagen{
         width: 100%;
-        margin: 5px;
+        margin: 40px 20px;
         flex: 1.3;
         object-fit: cover;
+        
         
         
     }
@@ -280,18 +288,18 @@ p{
     .historia__textcontainer{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-end;
+        justify-content: flex-end;
         margin: 40px;
         flex: 1;
 
         h3{
-            font-size: 60px;
+            font-size: 50px;
                
         }
 
         p{
-            font-size: 25px;
+            font-size: 20px;
             
         }
     }
@@ -301,6 +309,8 @@ p{
 
 .todo{
     margin: 0 auto;
+    padding: 80px 0;
+    background: #fff;
 
     .todo_imagen{
         width: 100%;
@@ -314,8 +324,6 @@ p{
 //tienda titulos.
 
 .title_glow{
-    display: flex;
-    justify-content: center;
     background: #000;
     background: rgba(0, 0, 0, .1) ;
     backdrop-filter: blur(50px) ;
@@ -355,16 +363,45 @@ p{
             left: 100%;
         }
     }
-    h4{
-        align-self: flex-end;
+
+    h4 {
         color: #fff;
         font-size: 70px;
         padding: 5px;
-        
-       
-        
+        margin-left: auto;
+        text-align: center;
     }
+
+    .content-container {
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px; 
+        
+        h4 {
+            color: #fff;
+            font-size: 70px;
+            padding: 5px;
+            margin-left: auto;
+            
+        }
+        
+        
+        button {
+            background-color: #ffffff00;
+            border: none;
+            margin-left: auto;
+            
+            img {
+                width: 100px;
+                overflow: hidden;
+            }
+        }
+    }
+
 }
+
 
 //gallery
 
@@ -408,6 +445,67 @@ p{
     grid-column-start: span 2;
 }
 }
+
+//form
+
+.form-cliente{
+    width: 100%;
+    background: #27414780;
+    backdrop-filter: blur(10px);
+
+    .form-titulo{
+        text-align: center;
+        color: #fff;
+        font-size: 3rem;
+        background: #070e0f79;
+        backdrop-filter: blur(10px);
+        padding: 10px;
+    }
+
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        
+        label{
+            color: #fff;
+            font-size: 2rem;
+            padding: 8px;
+        }
+
+        input{
+            height: 1.6rem;
+            width: 14rem;
+            font-size: 1rem;
+        }
+        
+        #botonform{
+                padding: 10px 20px;
+                font-size: 20px;
+                border: none;
+                background-color:#1b2749;
+                border-radius: 5px;
+                color: #fff;
+                margin: 30px;
+                cursor: pointer;
+                &:hover{
+                    background-color:#324370 ;
+                }
+                &:active{
+                    background-color:#5c78c5;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
 
 
 //redes
@@ -538,12 +636,11 @@ p{
 
 
 #tienda__container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 20px;
     
-
 }
 
 
@@ -558,7 +655,15 @@ p{
     overflow: hidden;
     border: 2px solid #fff;
     position: relative;
-    
+    width: 450px;
+    height: 600px;
+    margin: 25px 15px;
+    transition: transform 1s ease-in-out;
+          
+      &:hover {
+              transform: scale(1.1);
+              filter: none;
+      }
 
     &:hover .tienda-body{
         right: 0;
@@ -570,6 +675,12 @@ p{
         height: 100%;
         object-fit: cover;
         border-radius: 15px;
+        transition: transform 0.3s ease-in-out;
+          
+            &:hover {
+              transform: scale(1.1);
+              filter: none;
+            }
     }
 
     .tienda-body{
@@ -609,9 +720,9 @@ p{
     border: 0;
     background-image: linear-gradient(
         150deg,
-        #19284C,
-        #09f,
-        #00ddff
+        #41444b9d,
+        rgba(175, 189, 199, 0.377),
+        #ffffff7c
     );
     border-radius: 8px;
     color: #fff;
@@ -623,10 +734,11 @@ p{
    }
 
    span{
-    background-color: #555;
+    background-color: #0000008e;
     padding: 16px 24px;
     border-radius: 6px;
     transition: .3s;
+    width: 100%;
    }
 
    button:hover span{
@@ -641,5 +753,208 @@ p{
 
 }
 
- 
+    
 
+//carrito popup
+.modal-container {
+    width: 80%;
+    margin: 0 10%;
+    max-height: 88vh;
+    color: #fff;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+  }
+  
+  .modal-container::-webkit-scrollbar {
+    display: none;
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0a0909;
+    color: #fff;
+    width: 100%;
+  }
+  
+  .modal-header-title {
+    justify-self: start;
+    font-size: 60px;
+  }
+  
+  .modal-header-button {
+    cursor: pointer;
+    font-size: 60px;
+  }
+  
+  .modal-container > .modal-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+  }
+  
+  .modal-container > div > img {
+    height: 120px;
+    width: 120px;
+  }
+  
+  .total-content {
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  @media only screen and (max-width: 750px) {
+    .modal-container {
+      width: 100%;
+      margin: 0;
+      min-height: 88vh;
+    }
+  
+    .modal-container > .modal-content {
+      justify-content: space-between;
+      width: 100%;
+      margin: 2px;
+    }
+  
+    .modal-container > div > img {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  
+  /*delete button product*/
+  .delete-product {
+    cursor: pointer;
+  }
+  
+  /*CarritoCounter*/
+  .cantidad-carrito {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+  }
+  
+  .sumar {
+    cursor: pointer;
+  }
+  
+  .restar {
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.modal-container{
+    width: 40rem;
+    max-height: 88vh;
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    z-index: 10;
+    position: fixed;
+    left: 70%;
+    overflow-x: hidden;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    width: 40rem;
+    color: #fff;
+}
+
+.modal-header-button{
+    cursor: pointer;
+}
+        
+.modal-header-title{
+    text-align: center;
+    padding: 2rem;
+    font-size: 4rem;
+}
+    
+
+.modal-content{
+background-color: #fff;
+box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+color: #000;
+padding-bottom: 1rem;
+        img{
+            width: 30rem;
+            height: 30rem;
+            margin-left: 4rem;
+            padding-top: 2rem;
+        }
+
+        h3 , p {
+            text-align: center;
+            padding: 1rem;
+        }
+}
+
+.delete-product{
+    margin-bottom: 2rem;
+    cursor: pointer;
+    margin-left: 35rem;
+}
+
+.total-content{
+        padding: 4.5rem;
+        text-align: center;
+        font-size: 2.5rem;
+}
+
+.sumar , .restar{
+        cursor: pointer;
+        padding: 1.5rem;
+}
+
+
+
+
+.cantidad-carrito{
+    background-color: rgb(186,206,185);
+    color:#000;
+    border-radius: 50%;
+    font-size: 1rem;
+    padding: 1rem;
+    left: 84%;
+    position: absolute;
+    display: none;
+} */

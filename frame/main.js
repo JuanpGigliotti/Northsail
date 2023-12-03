@@ -1,106 +1,217 @@
-//constructor carrito
-
-class producto{
-    constructor(id,nombre,imagen,descripcion,precio){
-        this.id = id;
-        this.nombre = nombre;
-        this.imagen = imagen;
-        this.descripcion = descripcion;
-        this.precio = precio
-    }
-
-}
-
-//arreglo prodocutos
-
-const productos = [
-    new producto(1,"THISTLE PROCTOR JIB","../imagenes/tienda1.webp","All-Purpose",10509),
-    new producto(2,"SABOT - NAPLES T6 MAINSAIL","../imagenes/tienda2.webp","All-Purpose (38-42kg)",14670),
-    new producto(3,"J-22 BIG FOOT JIB","../imagenes/tienda3.webp","Sailor weight > 95 lbs",25680),
-    new producto(4,"FLYING SCOT JIB","../imagenes/tienda4.webp","Snug Rig",12007),
-    new producto(5,"THISTLE VS MAINSAIL","../imagenes/tienda5.webp","All-Purpose",16700),
-    new producto(6,"DAY SAILER JIB","../imagenes/tienda6.webp","All-Purpose",18070),
-    new producto(7,"VIPER 640 J-5 JIB","../imagenes/tienda7.webp","All-Purpose | Aramid",14560),
-    new producto(8,"SOLO P-3 MAINSAIL","../imagenes/tienda8.webp","All-Purpose | Sailors 75-90kg",13000),
-    new producto(9,"MC SCOW MAGNUM MAINSAIL","../imagenes/tienda9.webp","All-Purpose",14500),
-    new producto(10,"J-24 FAT HEAD MAINSAIL","../imagenes/tienda10.webp","All-Purpose",13567),
-    new producto(11,"J-22 M7 MAINSAIL","../imagenes/tienda11.webp","All-Purpose",13346),
-    new producto(12,"SNIPE R3-LM JIB","../imagenes/tienda12.webp","Heavy Wind | Light Crew",11513),
-    new producto(13,"SHIELDS MAINSAIL","../imagenes/tienda13.webp","All-Purpose",10350),
-    new producto(14,"IC37 MNI-1 MAINSAIL","../imagenes/tienda14.webp","All-Purpose",12530),
-    new producto(15,"2.4M FR-1 MAINSAIL","../imagenes/tienda15.webp","Light-Medium | Charger Masts",10394),
-    new producto(16,"2.4M CA-T75 JIB","../imagenes/tienda16.webp","Light | Charger masts",13356),
-    new producto(17,"SOLO L-3 MAINSAIL","../imagenes/tienda17.webp","All-Purpose | Sailors 75-90kg",10498),
-    new producto(18,"MELGES 24 P1 AIRX ASYMMETRIC","../imagenes/tienda18.webp","All-Purpose | Sailors Below 75kg",14039),
-    new producto(19,"J-70XCS-4 MAINSAIL","../imagenes/tienda19.webp","All-Purpose | Flat Waters",12043),
-    new producto(20,"J-24 SD/TH GENOA","../imagenes/tienda20.webp","All-Purpose | Ultimate Durability",12933)
-];
-
-const agregar = (id) =>{
-    const producto = productos.find((item) => item.id === id);
-
-    //aca iria la herramienta que mostro el profe pero no tengo ganas de buscar
-}
-
-
-
-//contenedor afuera burraso
+//contenedores de tienda afuera burraso
 let tiendacontainer = document.getElementById("tienda__container");
+const vercarrito = document.getElementById("vercarrito");
+const modalContainer = document.getElementById("modal-container");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
+
+//carrito de compras
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
-productos.forEach((item) => {
-    let productDiv = document.createElement("div");
-    productDiv.classList.add("tienda-container");
-
-
-    productDiv.innerHTML = `
-
-        <img src="${item.imagen}" alt="${item.nombre}">
-    
-        <div class="tienda-body">
-            <h4>${item.nombre}</h4>    
-            <p>${item.descripcion}</p>
-            <b>$${item.precio}</b>
-            <button id="boton${item.id}"><span>Agregar</span></button>
-        </div>
-       
-    
-    <hr />
+//json
+fetch(`frame/data.json`)
+    .then((response) => response.json())
+    .then((data) => {
+        data.forEach((item) => {
+            let productDiv = document.createElement("div");
+            productDiv.classList.add("tienda-container");
+            productDiv.innerHTML = `
+            <img class= "tienda-imagen" src="${item.imagen}" alt="${item.nombre}">
+            <div class="tienda-body">
+                <h4>${item.nombre}</h4>    
+                <p>${item.tipo}</p>
+                <b>$${item.precio}</b>
+                <button id="boton${item.id}"><span>Agregar</span></button>
+            </div>
+        <hr />
 `;
+tiendacontainer.append(productDiv);
 
-    document.getElementById("tienda__container").appendChild(productDiv);
+//boton de compra
 
-    let boton = productDiv.querySelector(`#boton${item.id}`);
+let boton = document.getElementById(`boton${item.id}`);
+    boton.addEventListener("click", () => {    
+        const repeat = carrito.some((repeatProduct) => repeatProduct.id == item.id);
+        if(repeat){
+        carrito.map((prod) => {
+            if(prod.id === item.id){
+                prod.cantidad++;
+            };
+        });
+        }else{
+        carrito.push({
+            id: item.id,
+            imagen: item.imagen,
+            nombre:item.nombre,
+            tipo: item.tipo,
+            precio: item.precio,
+            cantidad:item.cantidad
+        });
+    console.log(carrito);
+    console.log(carrito.length);
+    carritoCounter();
+    saveLocal();
+};
+});
+});
 
-         boton.addEventListener("click", () => agregar(item.id));
+//carrito de compras
+const pintarcarrito = () =>{
+    modalContainer.style.display = "block";
+    modalContainer.innerHTML = "";
+    const modalHeader = document.createElement("div");
+    modalHeader.className= "modal-header";
+    modalHeader.innerHTML = `
+    <h1 class = "modal-header-title">Market</h1>
+   `;
+   modalContainer.append(modalHeader);
+
+   const modalbutton = document.createElement("h1");
+   modalbutton.innerText = "X";
+   modalbutton.className = "modal-header-button";
+
+   modalbutton.addEventListener("click", () =>{
+    modalContainer.style.display = "none";
+   });
+
+   modalHeader.append(modalbutton);
+
+
+//carrito de compras recorrido
+carrito.forEach((item) => {
+    let carritoContent = document.createElement("div");
+    carritoContent.className = "modal-content";
+    carritoContent.innerHTML = `
+        <img src=" ${item.imagen}">
+        <h3>$${item.nombre}</h3>
+        <p>$${item.precio} $</p>
+        <span class="restar"> - </span>
+        <p>${item.cantidad}</p>
+        <span class="sumar"> + </span>
+        <p>${item.cantidad * item.precio}</p>
+        <span class="delete-product">❌</span>
+    `;
+
+    modalContainer.append(carritoContent);
+
+//sumar,restar y eliminar carrito
+
+let restar = carritoContent.querySelector(".restar");
+    restar.addEventListener("click", () => {
+        if(item.cantidad != 1){
+        item.cantidad--;
+        };
+        saveLocal();
+        pintarcarrito();
+        
+    });
+    
+
+let sumar = carritoContent.querySelector(".sumar");
+sumar.addEventListener("click", () => {
+    item.cantidad++;
+    saveLocal();
+    pintarcarrito();
+});
+
+let eliminar = carritoContent.querySelector(".delete-product");
+    eliminar.addEventListener("click", () => {
+        eliminarProducto(item.id);
+    });
+});
+
+//total del carrito
+
+const total = carrito.reduce((ac, item) => ac + item.precio * item.cantidad , 0);
+const totalCompra = document.createElement("div");
+    totalCompra.className = "total-content";
+    totalCompra.innerHTML = `TOTAL <br> ${total} $ `;
+    modalContainer.append(totalCompra);
+};
+
+vercarrito.addEventListener("click", pintarcarrito);
+
+//eliminar prod
+const eliminarProducto = (id) => {
+    const foundId = carrito.find((element) => element.id === id);
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== foundId;
+    });
+    carritoCounter();
+    saveLocal();
+    pintarcarrito();
+};
+});
+
+//contador de carrito cuanto va
+
+const carritoCounter = () => {
+    cantidadCarrito.style.display= "block";
+    const carritoLength = carrito.length;
+    localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+    cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
+};
+carritoCounter();
+
+//localstorage.
+const saveLocal = () =>{
+localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+
+//copy
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+//formulario
+
+let formulario = document.getElementById("form-cliente");
+
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let email = document.getElementById("email").value;
+    let telefono = document.getElementById("telefono").value;
+
+    let datosFormulario = {
+        nombre: nombre,
+        apellido: apellido,
+        email: email,
+        telefono: telefono
+    };
+
+    let datosFormularioJSON = JSON.stringify(datosFormulario);
+    localStorage.setItem("datosFormulario", datosFormularioJSON);
+
+    let timerInterval;
+Swal.fire({
+  title: "Form submitted successfully",
+  html: "<b></b>",
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading();
+    const timer = Swal.getPopup().querySelector("b");
+    timerInterval = setInterval(() => {
+      timer.textContent = `${Swal.getTimerLeft()}`;
+    }, 100);
+  },
+  willClose: () => {
+    clearInterval(timerInterval);
+  }
+}).then((result) => {
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log("I was closed by the timer");
+  }
 });
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//copy
-document.getElementById('year').textContent = new Date().getFullYear();
-
-
+let datosFormularioJSONRecuperados = localStorage.getItem("datosFormulario");
+let datosFormularioRecuperados = JSON.parse(datosFormularioJSONRecuperados);
+console.log(datosFormularioRecuperados);
+});
+//basicamente es para crear un arreglo como aun no aplicamos backend en este proyecto no se pudo hacer mucho mas...

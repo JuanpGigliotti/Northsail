@@ -1,0 +1,162 @@
+[
+    {
+      "id": 1,
+      "nombre": "THISTLE PROCTOR JIB",
+      "imagen": "./imagenes/tienda1.webp",
+      "tipo": "All-Purpose",
+      "precio": 10509,
+      "cantidad":1
+    },
+    {
+      "id": 2,
+      "nombre": "SABOT - NAPLES T6 MAINSAIL",
+      "imagen": "./imagenes/tienda2.webp",
+      "tipo": "All-Purpose (38-42kg)",
+      "precio": 14670,
+      "cantidad":1
+    },
+    {
+      "id": 3,
+      "nombre": "J-22 BIG FOOT JIB",
+      "imagen": "./imagenes/tienda3.webp",
+      "tipo": "Sailor weight > 95 lbs",
+      "precio": 25680,
+      "cantidad":1
+    },
+    {
+      "id": 4,
+      "nombre": "FLYING SCOT JIB",
+      "imagen": "./imagenes/tienda4.webp",
+      "tipo": "Snug Rig",
+      "precio": 12007,
+      "cantidad":1
+    },
+    {
+      "id": 5,
+      "nombre": "THISTLE VS MAINSAIL",
+      "imagen": "./imagenes/tienda5.webp",
+      "tipo": "All-Purpose",
+      "precio": 16700,
+      "cantidad":1
+    },
+    {
+      "id": 6,
+      "nombre": "DAY SAILER JIB",
+      "imagen": "./imagenes/tienda6.webp",
+      "tipo": "All-Purpose",
+      "precio": 18070,
+      "cantidad":1
+    },
+    {
+      "id": 7,
+      "nombre": "VIPER 640 J-5 JIB",
+      "imagen": "./imagenes/tienda7.webp",
+      "tipo": "All-Purpose | Aramid",
+      "precio": 14560,
+      "cantidad":1
+    },
+    {
+      "id": 8,
+      "nombre": "SOLO P-3 MAINSAIL",
+      "imagen": "./imagenes/tienda8.webp",
+      "tipo": "All-Purpose | Sailors 75-90kg",
+      "precio": 13000,
+      "cantidad":1
+    },
+    {
+      "id": 9,
+      "nombre": "MC SCOW MAGNUM MAINSAIL",
+      "imagen": "./imagenes/tienda9.webp",
+      "tipo": "All-Purpose",
+      "precio": 14500,
+      "cantidad":1
+    },
+    {
+      "id": 10,
+      "nombre": "J-24 FAT HEAD MAINSAIL",
+      "imagen": "./imagenes/tienda10.webp",
+      "tipo": "All-Purpose",
+      "precio": 13567,
+      "cantidad":1
+    },
+    {
+      "id": 11,
+      "nombre": "J-22 M7 MAINSAIL",
+      "imagen": "./imagenes/tienda11.webp",
+      "tipo": "All-Purpose",
+      "precio": 13346,
+      "cantidad":1
+    },
+    {
+      "id": 12,
+      "nombre": "SNIPE R3-LM JIB",
+      "imagen": "./imagenes/tienda12.webp",
+      "tipo": "Heavy Wind | Light Crew",
+      "precio": 11513,
+      "cantidad":1
+    },
+    {
+      "id": 13,
+      "nombre": "SHIELDS MAINSAIL",
+      "imagen": "./imagenes/tienda13.webp",
+      "tipo": "All-Purpose",
+      "precio": 10350,
+      "cantidad":1
+    },
+    {
+      "id": 14,
+      "nombre": "IC37 MNI-1 MAINSAIL",
+      "imagen": "./imagenes/tienda14.webp",
+      "tipo": "All-Purpose",
+      "precio": 12530,
+      "cantidad":1
+    },
+    {
+      "id": 15,
+      "nombre": "2.4M FR-1 MAINSAIL",
+      "imagen": "./imagenes/tienda15.webp",
+      "tipo": "Light-Medium | Charger Masts",
+      "precio": 10394,
+      "cantidad":1
+    },
+    {
+      "id": 16,
+      "nombre": "2.4M CA-T75 JIB",
+      "imagen": "./imagenes/tienda16.webp",
+      "tipo": "Light | Charger masts",
+      "precio": 13356,
+      "cantidad":1
+    },
+    {
+      "id": 17,
+      "nombre": "SOLO L-3 MAINSAIL",
+      "imagen": "./imagenes/tienda17.webp",
+      "tipo": "All-Purpose | Sailors 75-90kg",
+      "precio": 10498,
+      "cantidad":1
+    },
+    {
+      "id": 18,
+      "nombre": "MELGES 24 P1 AIRX ASYMMETRIC",
+      "imagen": "./imagenes/tienda18.webp",
+      "tipo": "All-Purpose | Sailors Below 75kg",
+      "precio": 14039,
+      "cantidad":1
+    },
+    {
+      "id": 19,
+      "nombre": "J-70XCS-4 MAINSAIL",
+      "imagen": "./imagenes/tienda19.webp",
+      "tipo": "All-Purpose | Flat Waters",
+      "precio": 12043,
+      "cantidad":1
+    },
+    {
+      "id": 20,
+      "nombre": "J-24 SD/TH GENOA",
+      "imagen": "./imagenes/tienda20.webp",
+      "tipo": "All-Purpose | Ultimate Durability",
+      "precio": 12933,
+      "cantidad":1
+    }
+]
