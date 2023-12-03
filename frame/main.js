@@ -126,7 +126,10 @@ let eliminar = carritoContent.querySelector(".delete-product");
 const total = carrito.reduce((ac, item) => ac + item.precio * item.cantidad , 0);
 const totalCompra = document.createElement("div");
     totalCompra.className = "total-content";
-    totalCompra.innerHTML = `TOTAL <br> ${total} $ `;
+    totalCompra.innerHTML = `TOTAL <br> ${total} $ <br>
+    <button class= "boton-pago">Pay</button>
+    
+    `;
     modalContainer.append(totalCompra);
 };
 
